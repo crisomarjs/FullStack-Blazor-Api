@@ -97,9 +97,19 @@ namespace ClienteBlazor.Services
             }
         }
 
-        public Task<string> UploadImage(MultipartFormDataContent content)
+        public async Task<string> UploadImage(MultipartFormDataContent content)
         {
-            throw new NotImplementedException();
+            var postResult = await _httpClient.PostAsync($"{Inicializar.UrlApi}api/upload", content);
+            var postContent = await postResult.Content.ReadAsStringAsync();
+            if(!postResult.IsSuccessStatusCode)
+            {
+                throw new ApplicationException(postContent);
+            }
+            else
+            {
+                var imagenPost = Path.Combine($"{Inicializar.UrlApi}", postContent);
+                return imagenPost;
+            }
         }
     }
 }

@@ -59,6 +59,14 @@
 					<div class="row">
 						<div class="col-6">
 							<h4>Imagen Post</h4>
+							<InputFile OnChange="@OnUploadFile"></InputFile>
+							<br />
+							@if(imagenPost != null)
+							{
+								<div>
+									<img src="@imagenPost" style="width: 300px;" />
+								</div>
+							}
 						</div>
 					</div>
 				</div>
