@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBlog", "ApiBlog\ApiBlog.csproj", "{10FAA1FE-D8E9-4961-BDF6-10A5C8D1A93D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteBlazor", "ClienteBlazor\ClienteBlazor.csproj", "{1A7D18A4-212D-4FDF-A829-0D9D64E1832D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10FAA1FE-D8E9-4961-BDF6-10A5C8D1A93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10FAA1FE-D8E9-4961-BDF6-10A5C8D1A93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10FAA1FE-D8E9-4961-BDF6-10A5C8D1A93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10FAA1FE-D8E9-4961-BDF6-10A5C8D1A93D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7D18A4-212D-4FDF-A829-0D9D64E1832D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7D18A4-212D-4FDF-A829-0D9D64E1832D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7D18A4-212D-4FDF-A829-0D9D64E1832D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7D18A4-212D-4FDF-A829-0D9D64E1832D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC497392-6E5E-459D-9771-8A32AA9CA092}
+	EndGlobalSection
+EndGlobal

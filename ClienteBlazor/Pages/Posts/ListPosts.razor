@@ -1,0 +1,66 @@
+﻿@page "/posts"
+
+<h1 class="text-center">Posts</h1>
+
+<div class="card">
+	<div class="card-header">
+		<div class="row">
+			<div class="col-7">
+				<h4 class="card-title text-dark">Lista de Posts</h4>
+			</div>
+
+			<div class="col-3 offset-2">
+				<NavLink href="crear-post" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Nuevo Post</NavLink>
+			</div>
+		</div>
+	</div>
+
+	<div class="card-body">
+		<table class="table table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titulo</th>
+					<th>Descripcion</th>
+					<th>Etiquetas</th>
+					<th>Imagen</th>
+					<th>Fecha de Creacion</th>
+					<th>Fecha de Actualizacion</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				@if(Posts.Count() > 0)
+				{
+					@foreach(var post in Posts)
+					{
+						<tr>
+							<td>@post.Id</td>
+							<td>@post.Titulo</td>
+							<td>@post.Descripcion</td>
+							<td>@post.Etiquetas</td>
+							<td>@post.RutaImagen</td>
+							<td>@post.FechaCreacion</td>
+							<td>@post.FechaActualizacion</td>
+							<td>
+								<NavLink href="@($"editar-post/{post.Id}")" class="btn btn-success"><i class="bi bi-gear-fill"></i> Editar</NavLink>
+								<button class="btn btn-danger" @onclick="() => OnDelete(post.Id)"><i class="bi bi-trash-fill"></i>Borrar</button>
+							</td>
+						</tr>
+					}
+				}
+				else
+				{
+					<tr>
+						<td colspan="7">No hay Posts</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+</div>
+
+@code {
+
+}
