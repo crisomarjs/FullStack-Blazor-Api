@@ -38,7 +38,7 @@ namespace ClienteBlazor.Services
 
         public async Task<bool> DeletePost(int id)
         {
-            var res = await _httpClient.GetAsync($"{Inicializar.UrlApi}api/posts/{id}");
+            var res = await _httpClient.DeleteAsync($"{Inicializar.UrlApi}api/posts/{id}");
             if (res.IsSuccessStatusCode)
             {
                 return true;
@@ -81,7 +81,7 @@ namespace ClienteBlazor.Services
         {
             var content = JsonConvert.SerializeObject(post);
             var bodyContent = new StringContent(content, Encoding.UTF8, "application/json");
-            var res = await _httpClient.PostAsync($"{Inicializar.UrlApi}api/posts/{id}", bodyContent);
+            var res = await _httpClient.PatchAsync($"{Inicializar.UrlApi}api/posts/{id}", bodyContent);
 
             if (res.IsSuccessStatusCode)
             {
@@ -92,7 +92,7 @@ namespace ClienteBlazor.Services
             else
             {
                 var contentTemp = await res.Content.ReadAsStringAsync();
-                var errorModel = JsonConvert.DeserializeObject<ModeloError>(content);
+                var errorModel = JsonConvert.DeserializeObject<ModeloError>(contentTemp);
                 throw new Exception(errorModel.ErrorMessage);
             }
         }

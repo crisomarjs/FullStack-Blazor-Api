@@ -1,0 +1,94 @@
+﻿@page "/editar-post/{id:int}"
+
+<h1 class="text-center">Editar Post</h1>
+
+<div class="card">
+	<div class="card-header">
+		<div class="row">
+			<div class="col-7">
+				<h4 class="card-title text-dark">Editar Post Existente</h4>
+			</div>
+		</div>
+	</div>
+
+	<div class="card-body">
+		<EditForm Model="EditarPost" OnValidSubmit="@( () => OnEditPost() )">
+			<DataAnnotationsValidator />
+			<ValidationSummary />
+			<div class="container">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-2">
+							<label>Titulo</label>
+						</div>
+						<div class="col-6">
+							<InputText @bind-Value="EditarPost.Titulo" class="form-control" placeholder="Ingresa el Titulo"></InputText>
+							<ValidationMessage For="() => EditarPost.Titulo"></ValidationMessage>
+						</div>
+					</div>
+				</div>
+				<br />
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-2">
+							<label>Descripcion</label>
+						</div>
+						<div class="col-6">
+							<InputText @bind-Value="EditarPost.Descripcion" class="form-control" placeholder="Ingresa la Descripcion"></InputText>
+							<ValidationMessage For="() => EditarPost.Descripcion"></ValidationMessage>
+						</div>
+					</div>
+				</div>
+				<br />
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-2">
+							<label>Etiquetas</label>
+						</div>
+						<div class="col-6">
+							<InputText @bind-Value="EditarPost.Etiquetas" class="form-control" placeholder="Ingresa las Etiquetas, separadas por comas"></InputText>
+							<ValidationMessage For="() => EditarPost.Etiquetas"></ValidationMessage>
+						</div>
+					</div>
+				</div>
+				<br />
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<h4>Imagen Post</h4>
+							<div class="imagen-post mb-3" style="background:url('@EditarPost.RutaImagen'); width:300px; height:169px; background-size: cover;">
+							</div>
+						</div>
+						<div class="col-6">
+							<h4>Actualizar Imagen Post</h4>
+							<InputFile OnChange="@OnUploadFile"></InputFile>
+							<br />
+							@if (imagenPost != null)
+							{
+								<div>
+									<img src="@imagenPost" style="width: 300px;" />
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+				<br />
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-2">
+							<button type="submit" class="btn btn-success"><i class="bi bi-gear-fill"></i> Guardar</button>
+						</div>
+						<div class="col-6">
+							<NavLink href="posts" class="btn btn-secondary"><i class="bi bi-arrow-left-circle-fill"></i>  Volver</NavLink>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</EditForm>
+	</div>
+</div>

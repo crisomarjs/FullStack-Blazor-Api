@@ -111,12 +111,6 @@ namespace ApiBlog.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (_postRepository.ExistePost(actualizarPostDTO.Titulo))
-            {
-                ModelState.AddModelError("", "El Post ya existe");
-                return StatusCode(404, ModelState);
-            }
-
             var post = _mapper.Map<Post>(actualizarPostDTO);
 
             if (!_postRepository.ActualizarPost(post))
