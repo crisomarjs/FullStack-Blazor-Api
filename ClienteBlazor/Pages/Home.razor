@@ -2,6 +2,25 @@
 
 <PageTitle>Inicio</PageTitle>
 
-<h1 class="">Hello, world!</h1>
+<h1 class="text-center">Ultimos Posts</h1>
+
+<div class="row">
+	@foreach(var post in Posts)
+	{
+		<div class="col-3 mt-3">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="text-center">@post.Titulo</h3>
+				</div>
+				<div class="card-body">
+					<img src="@post.RutaImagen" class="img-fluid" />
+				</div>
+				<div class="card-footer">
+					<NavLink href="@($"detalle-post/{post.Id}")">Más información...</NavLink>
+				</div>
+			</div>
+		</div>
+	}
+</div>
 
 

@@ -1,0 +1,13 @@
+﻿@page "/detalle-post/{Id:int}"
+
+<PageTitle>Inicio</PageTitle>
+
+<h1 class="text-center">@post.Titulo</h1>
+<div class="col-8 offset-2">
+	<img src="@post.RutaImagen" class="img-fluid" />
+</div>
+<h3>@post.Descripcion</h3>
+<h4><strong>Etiquetas: </strong> @post.Etiquetas</h4>
+<h5><strong>Fecha de Creación: </strong>@post.FechaCreacion</h5>
+
+<NavLink href="/" class="btn btn-seconday"> <i class="bi bi-arrow-left-circle-fill"></i> Volver a listas </NavLink>
